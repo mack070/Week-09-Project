@@ -1,7 +1,7 @@
-import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import { auth } from "@clerk/nextjs/server";
 import './globals.css';
-import { db } from "./lib/db";
+import { db } from "@/lib/db";
 
 export default async function RootLayout({ children }) {
   const { userId } = auth();

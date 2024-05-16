@@ -1,12 +1,9 @@
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
-import { db } from "./lib/db";
+import { db } from "@src/app/lib/db";
 
 export default async function Posts() {
-  // get the clerk userId
   const { userId } = auth();
-
-  // get my new posts
   const posts = await db.query(`SELECT
                 posts.id,
                 posts.content,
@@ -14,19 +11,16 @@ export default async function Posts() {
             FROM posts
             INNER JOIN profiles ON posts.profile_id = profiles.id;`);
 
-  // server action to add a new post
+
   async function handleAddPost(formData) {
     "use server";
-    // get information from the form
     const content = formData.get("content");
 
-    // get the profile id from the database
     const result = await db.query(
       `SELECT id FROM profiles WHERE clerk_id = '${userId}'`
     );
     const profileId = result.rows[0].id;
 
-    // add the new post to the database
     await db.query(
       `INSERT INTO posts (profile_id, content) VALUES (${profileId}, '${content}')`
     );
