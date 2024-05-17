@@ -1,6 +1,6 @@
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
-import { db } from "@src/app/lib/db";
+import { db } from "@/lib/db";
 
 export default async function Posts() {
   const { userId } = auth();
@@ -32,13 +32,13 @@ export default async function Posts() {
       <SignedIn>
         <h3>Create new post</h3>
         <form action={handleAddPost}>
-          <textarea name="content" placeholder="New post"></textarea>
-          <button>Submit</button>
+          <textarea name="content" placeholder="Is anybody there?"></textarea>
+          <button>Beckon</button>
         </form>
       </SignedIn>
 
       <SignedOut>
-        <p>You need to sign in to add a post</p>
+        <p>You need to sign in to communicate with a spirit.</p>
         <SignInButton />
       </SignedOut>
 
@@ -47,7 +47,7 @@ export default async function Posts() {
         {posts.rows.map((post) => {
           return (
             <div key={post.id}>
-              <h4>{post.username} says...</h4>
+              <h4>{post.username} conveys...</h4>
               <p>{post.content}</p>
             </div>
           );
