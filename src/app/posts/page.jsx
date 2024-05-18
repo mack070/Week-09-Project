@@ -1,6 +1,7 @@
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { db } from "@/lib/db";
+import LikeButton from '@/app/like-button';
 
 export default async function Posts() {
   const { userId } = auth();
@@ -31,9 +32,10 @@ export default async function Posts() {
       <h2>Posts</h2>
       <SignedIn>
         <h3>Create new post</h3>
-        <form action={handleAddPost}>
+        <form className='posts-form' action={handleAddPost}>
           <textarea name="content" placeholder="Is anybody there?"></textarea>
-          <button>Beckon</button>
+          <LikeButton />
+          <button>Submit</button>
         </form>
       </SignedIn>
 
@@ -42,7 +44,7 @@ export default async function Posts() {
         <SignInButton />
       </SignedOut>
 
-      <h3>All posts</h3>
+      <h3>Posts</h3>
       <div className="posts">
         {posts.rows.map((post) => {
           return (

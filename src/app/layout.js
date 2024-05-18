@@ -21,11 +21,11 @@ export default async function RootLayout({ children }) {
           <h3>For when you just can't let go</h3>
           <p>Hello and welcome to Parasocial the transcedent new social media platform that allows you to stay in touch with your dearly parted after they've moved on to the next life.</p>
 
-<nav>
-<a>Home</a>
-<a>About</a>
-<a>Posts</a>
-<a>Following</a>
+<nav className='layout-nav'>
+<a className='home' link href="/">Home</a>
+<a className='about-link' link href="/about">About</a>
+<a className='posts-link' link href="/posts">Posts</a>
+<a className='following-link' link href="/following">Following</a>
 </nav>
             <SignedOut>
               <SignInButton />
@@ -43,7 +43,7 @@ export default async function RootLayout({ children }) {
           </section>
             {children}
           </main>
-          <footer>Parasocial 2024</footer>
+          <footer className='page-footer'>Parasocial 2024</footer>
         </body>
       </html>
     </ClerkProvider>
