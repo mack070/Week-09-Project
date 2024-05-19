@@ -33,7 +33,7 @@ export default async function RootLayout({ children }) {
             <SignedOut>
               <SignInButton />
             </SignedOut>
-            <SignedIn className="signIn">
+            <SignedIn >
               <UserButton />
             </SignedIn>
           </header>

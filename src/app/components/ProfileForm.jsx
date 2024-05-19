@@ -17,7 +17,7 @@ export default function ProfileForm() {
   return (
     <div>
       <h2>Update Profile</h2>
-      <p>Welcome to TimTalk, please choose your username!</p>
+      <p>Welcome to Parasocial where the conversation never dies, please choose your username!</p>
       <form action={handleUpdateProfile}>
         <input name="username" placeholder="Username" />
         <button>Submit</button>

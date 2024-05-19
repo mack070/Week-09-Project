@@ -31,7 +31,7 @@ export default async function Posts() {
   return (
     <div className="PostsFormDiv">
       <h2>posts</h2>
-      <SignedIn className="signIn">
+      <SignedIn >
         <h3>Create new post</h3>
         <form className='posts-form' action={handleAddPost}>
           <textarea name="content" placeholder="Is anybody there?"></textarea>
