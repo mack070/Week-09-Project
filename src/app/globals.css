@@ -93,7 +93,6 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  
 }
 
 a {
@@ -109,8 +108,8 @@ a {
 
 .layout-nav {
   flex: 1 1 auto;
-  font-size: 1.125rem;
-line-height: 1.75rem;
+  font-size: 1.5rem;
+line-height: 2rem;
 text-align: left;
 padding: 0.375rem;
 }
@@ -133,10 +132,34 @@ padding: 0.25rem;
 cursor: pointer;
 }
 
-.following-link {
+.update-profile-link {
   color: purple;
   padding: 0.25rem;
   cursor: pointer;
+  }
+
+  .parasocial-logo {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    
+  }
+
+.submitButton {
+color: purple;
+font-size: 1.125rem;
+line-height: 1.75rem;
+text-transform: uppercase;
+font-weight: 700;
+border-color: #4C1D95;
+}
+
+.likeButton {
+  color: purple;
+  font-size: 1.125rem;
+line-height: 1.75rem;
+text-transform: uppercase;
+font-weight: 700;
+border-color: #4C1D95;
   }
 
   h2 {
@@ -172,6 +195,7 @@ text-align: center;
   font-size: 1.125rem;
 line-height: 1.75rem;
 text-align: center;
+border-color: #4C1D95;
 }
 
 .page-footer {
@@ -179,4 +203,24 @@ text-align: center;
   font-size: 1.125rem;
 line-height: 1.75rem;
 text-align: center;
+vertical-align: text-bottom;
+font-size: 1.25rem;
+line-height: 1.75rem;
+}
+
+.about-p {
+flex: 1 1 auto;
+font-size: 2.25rem;
+line-height: 2.5rem;
+text-align: center;
+vertical-align: text-top;
+}
+
+.signIn {
+color: purple;
+font-size: 1.125rem;
+line-height: 1.75rem;
+text-transform: uppercase;
+font-weight: 700;
+border-color: #4C1D95;
 }

@@ -1,9 +1,8 @@
-import LikeButton from './like-button';
+import React from 'react';
 
-export default function Home() {
-return (
-<div>
-<LikeButton />
-</div>
-);
+export default function home() {
+  return (
+    <div>
+    </div>
+  );
 }

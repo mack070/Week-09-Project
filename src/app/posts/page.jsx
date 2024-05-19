@@ -2,6 +2,7 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { db } from "@/lib/db";
 import LikeButton from '@/app/like-button';
+import React from 'react';
 
 export default async function Posts() {
   const { userId } = auth();
@@ -28,14 +29,14 @@ export default async function Posts() {
   }
 
   return (
-    <div>
-      <h2>Posts</h2>
-      <SignedIn>
+    <div className="PostsFormDiv">
+      <h2>posts</h2>
+      <SignedIn className="signIn">
         <h3>Create new post</h3>
         <form className='posts-form' action={handleAddPost}>
           <textarea name="content" placeholder="Is anybody there?"></textarea>
-          <LikeButton />
-          <button>Submit</button>
+          < LikeButton />
+          <button className="submitButton">Submit</button>
         </form>
       </SignedIn>
 
@@ -44,14 +45,14 @@ export default async function Posts() {
         <SignInButton />
       </SignedOut>
 
-      <h3>Posts</h3>
+      <h3>All posts</h3>
       <div className="posts">
         {posts.rows.map((post) => {
           return (
-            <div key={post.id}>
-              <h4>{post.username} conveys...</h4>
-              <p>{post.content}</p>
-            </div>
+         <div key={post.id}>
+          <h4>{post.username} conveys...</h4>
+          <p>{post.content}</p>
+          </div>
           );
         })}
       </div>
